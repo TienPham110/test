@@ -1,0 +1,110 @@
+*{
+    margin: 0 auto;
+    font-family:Arial, Helvetica, sans-serif; 
+}
+body{
+    height: 450px;
+    width: 100%;
+    box-sizing: border-box;
+}
+#container{
+    height: 100%;
+    width: 100%;
+}
+/* Header */
+#header{
+    width: 100%;
+    height: 30px;
+    background-color: #3c5a9a;
+}
+
+#header #menu #title{
+    color: #ffffff;
+    font-weight: bold;
+    line-height:30px;
+    margin-left: 10%;
+}
+#header #menu #login{
+    color: #ffffff;
+    font-weight: bold;
+    line-height:30px;
+    float:right;
+    margin-right: 7%;
+}
+#header #menu #search{
+    margin-top: 100px ;
+}
+#header #menu #search input{
+    margin-left: 1%;
+    width: 40%;
+    line-height: 17px;;
+}
+#search input{
+    border-radius: 3px;
+}
+input{
+    border: 1px solid #e4e4e4;
+    border-radius: 2px;
+}
+input::placeholder{
+    text-indent: 5%;
+}
+
+/* form */
+#main{
+    width: 100%;
+    height: 420px;
+}
+#form-container{
+    width: 30%;
+    height: 100%;
+    margin:0 auto;
+    padding-top: 5%;
+}
+#form-container #header-form{
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #3d5c90;
+    padding:20px 0px 20px;
+    background-color:#ffffff;
+}
+#form-container #form{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 2px 2px #AAA;
+}
+#form-container #form #input{
+    width: 80%;
+    height: 100%;
+    padding-top: 7%;
+}
+#form-container #form ul{
+    list-style: none;
+    padding-inline-start: 0px;
+}
+#form-container #form ul li{
+    padding: 5%;
+}
+#form-container #form ul li input{
+    line-height: 35px;
+    width: 100%;
+}
+label{
+    font-weight: bolder;
+}
+
+#button #submit{
+margin-left: 35%;
+background-color: #3c589a;
+color: #ffffff;
+border: 0px solid black;
+border-radius: 3px;
+width:30%;
+height: 30px;
+font-size: 15px;
+}
