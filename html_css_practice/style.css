@@ -3,7 +3,7 @@
     font-family:Arial, Helvetica, sans-serif; 
 }
 body{
-    height: 650px;
+    height: 750px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -53,7 +53,7 @@ input::placeholder{
 /* form */
 #main{
     width: 100%;
-    height: 630px;
+    height: 720px;
 }
 #form-container{
     width: 30%;
@@ -86,17 +86,9 @@ input::placeholder{
 #form-container #form ul li{
     padding: 5%;
 }
-#form-container #form ul li input{
+input:not(.topic):not(.gender){
     line-height: 35px;
     width: 100%;
-}
-#form-container #form ul li .gender{
-    line-height: 35px;
-    width: 30%;
-}
-#form-container #form ul li .topic{
-    line-height: 35px;
-    width: 30%;
 }
 label{
     font-weight: bolder;
