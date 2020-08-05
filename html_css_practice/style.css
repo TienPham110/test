@@ -86,9 +86,17 @@ input::placeholder{
 #form-container #form ul li{
     padding: 5%;
 }
-#form-container #form ul li input:not(.gender, .topic){
+#form-container #form ul li input{
     line-height: 35px;
     width: 100%;
+}
+#form-container #form ul li .gender{
+    line-height: 35px;
+    width: 30%;
+}
+#form-container #form ul li .topic{
+    line-height: 35px;
+    width: 30%;
 }
 label{
     font-weight: bolder;
