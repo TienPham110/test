@@ -18,55 +18,43 @@
         <div id="main">
             <div id="form-container">
                 <div id="header-form">Fotobook Signup</div>
-                <div id="form">
-                    <form action="">
-                        <div id="input">
-                            <ul>
-                                <li>
-                                    <label for="firstName">First Name</label> 
-                                    <input type="text" placeholder="First Name" name="firstName">
-                                </li>
-                                <li>
-                                    <label for="lastName">Last Name</label> 
-                                    <input type="text" placeholder="Last Name" name="lastName">
-                                </li>
-                                <li>
-                                    <label for="country">Country</label>
-                                    <select name="country" id="country">
-                                        <option value="vn">VN</option>
-                                        <option value="en">EN</option>
-                                    </select>
-                                </li>
-                                <li id="gender">
-                                    <input type="radio" name="gender" class="gender" value="male">
-                                    <label for="male">Male</label>
-                                    <input type="radio" name="gender" class="gender" value="female">
-                                    <label for="female">Female</label>
-                                </li>
-                                <li id = "topic">
-                                    <h2>TOPIC:</h2>
-                                    <input type="checkbox" name="fashion" class="topic" value="fashion">
-                                    <label for="fashion">Fashion</label><br>
-                                    <input type="checkbox" name="news" class="topic" value="news">
-                                    <label for="news">News</label><br>
-                                    <input type="checkbox" name="sport" class="topic" value="sport">
-                                    <label for="sport">Sport</label><br>
-                                </li>
-                                <li>
-                                    <label for="password">New Password</label> <br>
-                                    <input type="password" placeholder="Password" name="password">
-                                </li>
-                                <li>
-                                    <label for="passwordConfirm">Password Confirmation</label> <br>
-                                    <input type="password" placeholder="Password" name="passwordConfirm">
-                                </li>    
-                            </ul>
-                        </div>
-                        <div id="button"><button type="submit" id="submit">Signup</button></div>
-                    </form>
-                </div>
-            </div>
+                <form action="">
+                    <label for="firstName">First Name</label> 
+                    <input type="text" placeholder="First Name" name="firstName">
+
+                    <label for="lastName">Last Name</label> 
+                    <input type="text" placeholder="Last Name" name="lastName">
+
+                    <label for="country">Country</label>
+                    <select name="country" id="country">
+                        <option value="vn">VN</option>
+                        <option value="en">EN</option>
+                    </select>
+                    <br> <br>
+                    <input type="radio" name="gender" class="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" class="gender" value="female">
+                    <label for="female">Female</label>
+                    <br> <br>
+                    <h4>TOPIC:</h4>
+                    <input type="checkbox" name="fashion" class="topic" value="fashion">
+                    <label for="fashion">Fashion</label><br>
+                    <input type="checkbox" name="news" class="topic" value="news">
+                    <label for="news">News</label><br>
+                    <input type="checkbox" name="sport" class="topic" value="sport">
+                    <label for="sport">Sport</label><br>
+                    <br> 
+                    <label for="password">New Password</label> <br>
+                    <input type="password" placeholder="Password" name="password">
+
+                    <label for="passwordConfirm">Password Confirmation</label> <br>
+                    <input type="password" placeholder="Password" name="passwordConfirm">       
+                
+                <div id="button"><button type="submit" id="submit">Signup</button></div>
+            </form>
+            </div>   
         </div>
+        
     </div>
 </body>
 </html>
