@@ -77,11 +77,11 @@ form input[type="text"], form input[type="password"]{
     outline:none;
     width:100%;
     line-height: 30px;
-    margin-bottom: 10px ;
+    
     padding-left: 10px;
 }
 
-
+form > div{ margin-top: 15px;}
 #button #submit{
 background-color: #3c589a;
 color: #ffffff;
@@ -91,5 +91,10 @@ width:33.33%;
 height: 35px;
 font-size: 17px;
 margin-left: 33.33%;
+}
+/*validate*/
+[class="error"]{
+    font-size: 10px;
+    color: red;
 }
 

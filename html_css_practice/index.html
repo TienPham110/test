@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.12.0/additional-methods.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -18,43 +21,135 @@
         <div id="main">
             <div id="form-container">
                 <div id="header-form">Fotobook Signup</div>
-                <form action="">
-                    <label for="firstName">First Name</label> 
-                    <input type="text" placeholder="First Name" name="firstName">
+                <form action="" class="cmxform" id="signup-form" method="">
+                    <div>
+                        <label for="firstName" >First Name</label> 
+                        <input type="text" placeholder="First Name*" name="firstName" id="firstName" class="input">
+                        <div id="errorFname"></div>
+                    </div>
 
-                    <label for="lastName">Last Name</label> 
-                    <input type="text" placeholder="Last Name" name="lastName">
+                    <div>
+                        <label for="lastName">Last Name</label> 
+                        <input type="text" placeholder="Last Name*" name="lastName" id="lastName" class="input"> 
+                        <div id="errorLname"></div>
+                    </div>
 
-                    <label for="country">Country</label>
-                    <select name="country" id="country">
-                        <option value="vn">VN</option>
-                        <option value="en">EN</option>
-                    </select>
-                    <br> <br>
-                    <input type="radio" name="gender" class="gender" value="male">
-                    <label for="male">Male</label>
-                    <input type="radio" name="gender" class="gender" value="female">
-                    <label for="female">Female</label>
-                    <br> <br>
-                    <h4>TOPIC:</h4>
-                    <input type="checkbox" name="fashion" class="topic" value="fashion">
-                    <label for="fashion">Fashion</label><br>
-                    <input type="checkbox" name="news" class="topic" value="news">
-                    <label for="news">News</label><br>
-                    <input type="checkbox" name="sport" class="topic" value="sport">
-                    <label for="sport">Sport</label><br>
-                    <br> 
-                    <label for="password">New Password</label> <br>
-                    <input type="password" placeholder="Password" name="password">
+                    <div>
+                        <label for="country">Country</label>
+                        <select name="country" id="country">
+                            <option value="vn" class="input">VN</option>
+                            <option value="en" class="input">EN</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input type="radio" name="gender" class="gender" value="male" class="input">
+                        <label for="male">Male</label>
+                        <input type="radio" name="gender" class="gender" value="female" class="input">
+                        <label for="female">Female</label>
+                        <div id="errorGender"></div>
+                    </div>
+                    
+                    <div>
+                        <h4>TOPIC:</h4>
+                        <fieldset id="topic_checked">
+                            <input type="checkbox" name="topic"  value="fashion" class="input">
+                            <label for="topic" >Fashion</label><br>
+                            <input type="checkbox" name="topic"  value="news" class="input">
+                            <label for="topic" >News</label><br>
+                            <input type="checkbox" name="topic"  value="sport" class="input">
+                            <label for="topic">Sport</label>
+                            <div id="errorTopic"></div>
+                        </fieldset>
 
-                    <label for="passwordConfirm">Password Confirmation</label> <br>
-                    <input type="password" placeholder="Password" name="passwordConfirm">       
+                    </div>
+                    <div>
+                        <label for="password">New Password</label> <br>
+                        <input type="password" placeholder="Password*" name="password" id="password" class="input"> 
+                        <div id="errorPass"></div>
+                    </div>
+
+                    <div>
+                        <label for="passwordConfirm">Password Confirmation</label> <br>
+                        <input type="password" placeholder="Password*" name="passwordConfirm" id="confirm_password" class="input">
+                        <div id="errorConfirmPass"></div>
+                    </div>
                 
                 <div id="button"><button type="submit" id="submit">Signup</button></div>
             </form>
             </div>   
         </div>
-        
     </div>
+    <script>
+        $(document).ready(function() {
+            $("#signup-form").validate({
+                rules: {
+                    firstName: "required",
+                    lastName: "required",
+                    password: {
+                        required: true,
+                        minlength: 8
+                    },
+                    passwordConfirm:{
+                        required: true,
+                        minlength: 8,
+                        equalTo: "#password"
+                    },
+                    gender:{
+                        required: true
+                    },
+                    topic:{
+                        required: true,
+                        minlength: 2
+                    }
+
+                },
+                messages: {
+                    firstName: {
+                        required: "Please enter your first name"
+                    },
+                    lastName: {
+                        required: "Please enter your last name"
+                    },
+                    gender:{
+                        required: "Please choose your gender"
+                    },
+                    password:{
+                        required: "Please enter your password"
+                    },
+                    passwordConfirm: {
+                        required: "please enter your password again",
+                        equalTo:"Please enter the same password"
+                    },
+                    topic: {
+                        required: "Please enter topic",
+                        minlength: "Please enter at least 2 topics"
+                    }
+                },
+                errorPlacement: function(error, element) {
+                    var name = element.attr("name")
+                    if(name == "firstName"){
+                        $("#errorFname").html(error)
+
+                    }
+                    else if(name == "lastName"){
+                        $("#errorLname").html(error)
+                    }
+                    else if(name == "gender"){
+                        $("#errorGender").html(error)
+                    }
+                    else if(name=="password"){
+                        $("#errorPass").html(error)
+                    }
+                    else if(name == "passwordConfirm"){
+                        $("#errorConfirmPass").html(error)
+                    }
+                    else if(name == "topic"){
+                        $("#errorTopic").html(error)
+                    }
+                }       
+            });
+        });
+ 
+        </script>
 </body>
 </html>
